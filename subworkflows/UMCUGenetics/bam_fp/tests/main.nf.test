@@ -67,7 +67,7 @@ nextflow_workflow {
                 { assert workflow.success },
                 { assert snapshot(
                     workflow.out.fp_vcf,
-                    workflow.out.fp_vcf_tbi,
+                    workflow.out.fp_vcf_tbi.collect { file(it[1]).name },
                  ).match() }
             )
         }

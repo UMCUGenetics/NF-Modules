@@ -10,15 +10,10 @@
                 ]
             ],
             [
-                [
-                    {
-                        "id": "sample1"
-                    },
-                    "sample1.vcf.gz.tbi:md5,d41d8cd98f00b204e9800998ecf8427e"
-                ]
+                "sample1.vcf.gz.tbi"
             ]
         ],
-        "timestamp": "2026-08-28T16:33:57.495923",
+        "timestamp": "2026-09-21T15:43:28.671928",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
