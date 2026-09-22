@@ -1,7 +1,7 @@
 include { GATK4_GENOTYPEGVCFS   } from '../../../modules/nf-core/gatk4/genotypegvcfs/main'
 include { GATK4_HAPLOTYPECALLER } from '../../../modules/nf-core/gatk4/haplotypecaller/main'
 
-workflow BAM_FP {
+workflow BAM_VARIANTCALLING_INTERVALS {
     take:
     ch_bam        // channel: [ meta, bam ]
     ch_bai        // channel: [ meta, bai ]
@@ -49,7 +49,7 @@ workflow BAM_FP {
     )
 
     emit:
-    fp_vcf        = GATK4_GENOTYPEGVCFS.out.vcf           // channel: [ meta, vcf.gz ]
-    fp_vcf_tbi    = GATK4_GENOTYPEGVCFS.out.tbi           // channel: [ meta, vcf.gz.tbi ]
+    vcf    = GATK4_GENOTYPEGVCFS.out.vcf           // channel: [ meta, vcf.gz ]
+    tbi    = GATK4_GENOTYPEGVCFS.out.tbi           // channel: [ meta, vcf.gz.tbi ]
 
 }

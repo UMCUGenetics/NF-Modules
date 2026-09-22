@@ -1,5 +1,5 @@
 {
-    "Validate fingerprint subworkflow - bam": {
+    "Validate BAM_VARIANTCALLING_INTERVALS subworkflow - bam": {
         "content": [
             [
                 [

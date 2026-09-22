@@ -1,13 +1,13 @@
 nextflow_workflow {
 
-    name "Test Subworkflow BAM_FP"
+    name "Test Subworkflow BAM_VARIANTCALLING_INTERVALS"
     script "../main.nf"
     config "./nextflow.config"
-    workflow "BAM_FP"
+    workflow "BAM_VARIANTCALLING_INTERVALS"
 
     tag "subworkflows"
     tag "subworkflows_UMCUGenetics"
-    tag "subworkflows/bam_fp"
+    tag "subworkflows/BAM_VARIANTCALLING_INTERVALS"
     tag "local"
     tag "gatk4"
     tag "gatk4/haplotypecaller"
@@ -29,7 +29,7 @@ nextflow_workflow {
     }
 
 
-    test("Validate fingerprint subworkflow - bam") {
+    test("Validate BAM_VARIANTCALLING_INTERVALS subworkflow - bam") {
         options "-stub"
 
         when {
@@ -66,9 +66,9 @@ nextflow_workflow {
             assertAll(
                 { assert workflow.success },
                 { assert snapshot(
-                    workflow.out.fp_vcf,
+                    workflow.out.vcf,
                     // Only assert name, md5sum is for an empty file.
-                    workflow.out.fp_vcf_tbi.collect { file(it[1]).name },
+                    workflow.out.tbi.collect { file(it[1]).name },
                  ).match() }
             )
         }
