@@ -67,6 +67,7 @@ nextflow_workflow {
                 { assert workflow.success },
                 { assert snapshot(
                     workflow.out.fp_vcf,
+                    // Only assert name, md5sum is for an empty file.
                     workflow.out.fp_vcf_tbi.collect { file(it[1]).name },
                  ).match() }
             )
