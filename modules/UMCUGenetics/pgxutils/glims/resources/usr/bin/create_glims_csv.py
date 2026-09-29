@@ -95,6 +95,13 @@ def main(
             readable=True,
             help="PGx star-allele table"
         )
+    ],
+    output: Annotated[
+        Path,
+        typer.Option(
+            '--output',
+            help="Output csv file name"
+        )
     ]
     ):
 
@@ -108,7 +115,8 @@ def main(
 
     glims_df = pgx_df.apply(format_glims_row, gene_name=gene_name, gene_alleles=gene_alleles, axis=1, result_type="expand")
     glims_df.columns = ["Sample", "Gen", "Genotype", "Conclusie", "Conclusie_text"]
-    print(glims_df)
+
+    glims_df.to_csv(output, sep=";", index=False)
 
 if __name__ == "__main__":
     app()
