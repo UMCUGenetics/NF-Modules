@@ -39,12 +39,12 @@ nextflow_workflow {
                     [ id:'sample1' ], // meta map
                     file(params.modules_testdata_base_path + "genomics/homo_sapiens/illumina/bam/test.paired_end.sorted.bam",
                         checkIfExists: true)
-                ])
+                ]).first()
                 input[1] = Channel.of( [
                     [ id:'sample1' ], // meta map
                     file(params.modules_testdata_base_path + "genomics/homo_sapiens/illumina/bam/test.paired_end.sorted.bam.bai",
                         checkIfExists: true)
-                ])
+                ]).first()
                 input[2] = Channel.of([[id: "genome"],
                     file(params.modules_testdata_base_path + "genomics/homo_sapiens/genome/genome.fasta", checkIfExists: true)]).first()
                 input[3] = Channel.of([[id: "genome"],
@@ -52,7 +52,7 @@ nextflow_workflow {
                 input[4] = Channel.of([[id: "genome"],
                     file(params.modules_testdata_base_path + "genomics/homo_sapiens/genome/genome.dict", checkIfExists: true)]).first()
                 input[5] = Channel.of([[id: "intervals"],
-                    file(params.subworkflows_umcu_testdata_base_path + "bam_fp/bam_fp_test.interval_list", checkIfExists: true)])
+                    file(params.subworkflows_umcu_testdata_base_path + "bam_fp/bam_fp_test.interval_list", checkIfExists: true)]).first()
 
                 input[6] = Channel.of([[id: "dbsnp"],
                     file(params.modules_testdata_base_path + "genomics/homo_sapiens/genome/vcf/dbsnp_146.hg38.vcf.gz",checkIfExists: true)]).first()
