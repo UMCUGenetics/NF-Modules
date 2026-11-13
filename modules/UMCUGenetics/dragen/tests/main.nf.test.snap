@@ -12,8 +12,10 @@
                             "sample1.bam.bai:md5,d41d8cd98f00b204e9800998ecf8427e",
                             "sample1.cnv_metrics.csv:md5,d41d8cd98f00b204e9800998ecf8427e",
                             "sample1.gvcf_metrics.csv:md5,d41d8cd98f00b204e9800998ecf8427e",
+                            "sample1.hard-filtered.baf.bw:md5,d41d8cd98f00b204e9800998ecf8427e",
                             "sample1.mapping_metrics.csv:md5,d41d8cd98f00b204e9800998ecf8427e",
                             "sample1.ploidy_estimation_metrics.csv:md5,d41d8cd98f00b204e9800998ecf8427e",
+                            "sample1.tn.bw:md5,d41d8cd98f00b204e9800998ecf8427e",
                             "sample1.wgs_coverage_metrics.csv:md5,d41d8cd98f00b204e9800998ecf8427e"
                         ]
                     ]
@@ -83,6 +85,15 @@
                 ],
                 "8": [
                     [
+                        {
+                            "id": "sample1"
+                        },
+                        "sample1.tn.bw:md5,d41d8cd98f00b204e9800998ecf8427e",
+                        "sample1.hard-filtered.baf.bw:md5,d41d8cd98f00b204e9800998ecf8427e"
+                    ]
+                ],
+                "9": [
+                    [
                         "DRAGEN",
                         "dragen",
                         "bash: line 1: dragen: command not found"
@@ -127,6 +138,15 @@
                         "sample1.gvcf_metrics.csv:md5,d41d8cd98f00b204e9800998ecf8427e"
                     ]
                 ],
+                "igv_bw": [
+                    [
+                        {
+                            "id": "sample1"
+                        },
+                        "sample1.tn.bw:md5,d41d8cd98f00b204e9800998ecf8427e",
+                        "sample1.hard-filtered.baf.bw:md5,d41d8cd98f00b204e9800998ecf8427e"
+                    ]
+                ],
                 "mapping_metrics": [
                     [
                         {
@@ -145,8 +165,10 @@
                             "sample1.bam.bai:md5,d41d8cd98f00b204e9800998ecf8427e",
                             "sample1.cnv_metrics.csv:md5,d41d8cd98f00b204e9800998ecf8427e",
                             "sample1.gvcf_metrics.csv:md5,d41d8cd98f00b204e9800998ecf8427e",
+                            "sample1.hard-filtered.baf.bw:md5,d41d8cd98f00b204e9800998ecf8427e",
                             "sample1.mapping_metrics.csv:md5,d41d8cd98f00b204e9800998ecf8427e",
                             "sample1.ploidy_estimation_metrics.csv:md5,d41d8cd98f00b204e9800998ecf8427e",
+                            "sample1.tn.bw:md5,d41d8cd98f00b204e9800998ecf8427e",
                             "sample1.wgs_coverage_metrics.csv:md5,d41d8cd98f00b204e9800998ecf8427e"
                         ]
                     ]
@@ -185,10 +207,10 @@
                 ]
             }
         ],
-        "timestamp": "2026-08-28T16:31:56.534107",
+        "timestamp": "2026-11-13T16:26:02.373034",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "26.10.5"
         }
     }
 }
