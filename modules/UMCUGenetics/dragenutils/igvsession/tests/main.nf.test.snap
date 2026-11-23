@@ -7,7 +7,7 @@
                         {
                             "id": "HG002"
                         },
-                        "HG002_IGV_srWGS_SampleQC_session.xml:md5,d41d8cd98f00b204e9800998ecf8427e"
+                        "HG002_IGV_srWGS_SampleQC_session.xml:md5,c1cb65720da92785fc8a10df7763f764"
                     ]
                 ],
                 "1": [
@@ -22,7 +22,7 @@
                         {
                             "id": "HG002"
                         },
-                        "HG002_IGV_srWGS_SampleQC_session.xml:md5,d41d8cd98f00b204e9800998ecf8427e"
+                        "HG002_IGV_srWGS_SampleQC_session.xml:md5,c1cb65720da92785fc8a10df7763f764"
                     ]
                 ],
                 "versions_dragenutils": [
@@ -43,7 +43,7 @@
                 ]
             }
         ],
-        "timestamp": "2026-11-23T09:45:27.556111",
+        "timestamp": "2026-11-23T17:38:58.196188",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.10.5"

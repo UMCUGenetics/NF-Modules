@@ -3,7 +3,7 @@ process DRAGENUTILS_IGVSESSION {
     label 'process_single'
 
     // TODO: Update all dragen-utils containers to 1.1.0 once the new version is released
-    container 'ghcr.io/umcugenetics/dragen-utils:1.0.0'
+    container 'ghcr.io/umcugenetics/dragen-utils:sha-dfcf600'
 
     input:
     tuple val(meta), path(bam)

@@ -10,8 +10,7 @@ nextflow_process {
     tag "dragenutils/igvsession"
 
     test("HG002 - srWGS IGV session xml file") {
-        // TODO: STUB can be removed when the dragen-utils container is updated to 1.1.0 and the new version is released
-        options "-stub"
+
         when {
             process {
                 """                
