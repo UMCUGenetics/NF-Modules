@@ -1,0 +1,45 @@
+nextflow_process {
+
+    name "Test Process DRAGENUTILS_IGVSESSION"
+    script "../main.nf"
+    process "DRAGENUTILS_IGVSESSION"
+
+    tag "modules"
+    tag "modules_UMCUGenetics"
+    tag "dragenutils"
+    tag "dragenutils/igvsession"
+
+    test("HG002 - srWGS IGV session xml file") {
+        // TODO: STUB can be removed when the dragen-utils container is updated to 1.1.0 and the new version is released
+        options "-stub"
+        when {
+            process {
+                """                
+                input[0] = [
+                    [ id:'HG002' ], 
+                    file(params.modules_umcu_testdata_base_path + "dragen_utils/igv_session/HG002.bam", checkIfExists: true),
+                ]
+                input[1] = [
+                    [ id:'HG002' ], 
+                    file(params.modules_umcu_testdata_base_path + "dragen_utils/igv_session/HG002.tn.bw", checkIfExists: true),
+                    file(params.modules_umcu_testdata_base_path + "dragen_utils/igv_session/HG002.hard_filtered.baf.bw", checkIfExists: true),
+                ]
+                """
+            }
+        }
+
+        then {
+            assert process.success
+            assertAll(
+                { assert snapshot(
+                    process.out,
+                    process.out.findAll { key, val -> key.startsWith('versions') }
+                ).match() }
+            )
+        }
+        
+
+
+    }
+
+}

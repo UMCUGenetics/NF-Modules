@@ -1,0 +1,52 @@
+{
+    "HG002 - srWGS IGV session xml file": {
+        "content": [
+            {
+                "0": [
+                    [
+                        {
+                            "id": "HG002"
+                        },
+                        "HG002_IGV_srWGS_SampleQC_session.xml:md5,d41d8cd98f00b204e9800998ecf8427e"
+                    ]
+                ],
+                "1": [
+                    [
+                        "DRAGENUTILS_IGVSESSION",
+                        "dragenutils",
+                        "1.0.0"
+                    ]
+                ],
+                "igv_session": [
+                    [
+                        {
+                            "id": "HG002"
+                        },
+                        "HG002_IGV_srWGS_SampleQC_session.xml:md5,d41d8cd98f00b204e9800998ecf8427e"
+                    ]
+                ],
+                "versions_dragenutils": [
+                    [
+                        "DRAGENUTILS_IGVSESSION",
+                        "dragenutils",
+                        "1.0.0"
+                    ]
+                ]
+            },
+            {
+                "versions_dragenutils": [
+                    [
+                        "DRAGENUTILS_IGVSESSION",
+                        "dragenutils",
+                        "1.0.0"
+                    ]
+                ]
+            }
+        ],
+        "timestamp": "2026-11-23T09:45:27.556111",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.10.5"
+        }
+    }
+}
