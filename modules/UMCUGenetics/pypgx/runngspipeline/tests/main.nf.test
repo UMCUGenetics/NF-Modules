@@ -1,0 +1,69 @@
+nextflow_process {
+
+    name "Test Process PYPGX_RUNNGSPIPELINE"
+    script "../main.nf"
+    config "./nextflow.config"
+    process "PYPGX_RUNNGSPIPELINE"
+
+    tag "modules"
+    tag "modules_nfcore"
+    tag "pypgx"
+    tag "pypgx/runngspipeline"
+    tag "untar"
+
+    test("CYP2B6 alleles"){
+        setup {
+            nfcoreInitialise("${launchDir}/library/")
+            nfcoreInstall(
+                "${launchDir}/library/",
+                [
+                    "UNTAR",
+                ]
+            )
+            nfcoreLink("${launchDir}/library/", "${baseDir}/modules/")
+
+            run("UNTAR") {
+                script "../../../../nf-core/untar/main.nf"
+                process {
+                    """
+                    input[0] = [
+                        [id: 'resource_bundle'],
+                        file('/Users/jsteenbr/pypgx-bundle-0.25.0.tar.gz')
+                    ]
+                    """
+                }
+            }
+        }
+
+        when{
+            process {
+                """
+                input[0] = Channel.of([
+                [id: 'multisample_cy2b6'],
+                    file("/Users/jsteenbr/Nextcloud/Projects/pgx_tables_vcfs/all_genes/all-genes.diplotypes.vcf.gz"),
+                    file("/Users/jsteenbr/Nextcloud/Projects/pgx_tables_vcfs/all_genes/all-genes.diplotypes.vcf.gz.tbi"),
+                    [], //coverage
+                    [], //control_stats
+                    "CYP2B6"
+                ])
+                input[1] = UNTAR.out.untar // resource bundle
+                """
+            }
+        }
+        then {
+            def results = process.out.results[0][1]
+            // def zipFile = path(results).zip
+            // def paths = zipFile.extractAll()
+            // def metaFile = paths.find { it.getFileName().toString() == "metadata.txt" }
+            // def dataFile = paths.find { it.getFileName().toString() == "data.tsv" }
+
+            assertAll(
+                { assert process.success }
+
+            )
+        }
+        cleanup {
+            nfcoreUnlink("${launchDir}/library/", "${baseDir}/modules/")
+        }
+    }
+}
