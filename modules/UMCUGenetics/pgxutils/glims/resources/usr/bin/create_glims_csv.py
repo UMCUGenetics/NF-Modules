@@ -12,6 +12,7 @@ ACTIVITY = {
     "decreased function": ("verminderd actief", "verminderd actieve"),
     "increased function": ("verhoogd actief", "verhoogd actieve"),
     "inactive":           ("inactief", "inactieve"),
+    "no function": ("inactief", "inactieve")
 }
 ORDER = list(ACTIVITY)
 
@@ -43,7 +44,13 @@ def generate_allele_activity_summary(phenotype, gene_name):
         "NM": "normaal",
         "IM": "verlaagd",
         "PM": "sterk verlaagd of afwezig",
-        "UM": "verhoogd"
+        "UM": "verhoogd",
+        "AS 2": "normaal",
+        "AS 1": "gehalveerd",
+        "AS 1.75": "licht verlaagd",
+        "AS 1.5": "verlaagd",
+        "AS 0": "sterk verlaagd of afwezig",
+        "FENO": "verlaagd"
     }
 
     return f"{gene_name} activiteit is {description[phenotype]} op basis van het genotype."
