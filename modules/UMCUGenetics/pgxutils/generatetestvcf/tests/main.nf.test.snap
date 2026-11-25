@@ -1,0 +1,23 @@
+{
+    "Test": {
+        "content": [
+            [
+                [
+                    {
+                        "id": "CYP2B6"
+                    },
+                    [
+                        "all-genes.CYP2B6.expected-results.tsv:md5,78f4f7ecb9d98005abf8277a2c5b6051",
+                        "all-genes.CYP2D6.expected-results.tsv:md5,c85a2bd54c98411753b916cc5ca48d45",
+                        "all-genes.DPYD.expected-results.tsv:md5,8ab8732c5c0d2d89d36ba1be5645e46c"
+                    ]
+                ]
+            ]
+        ],
+        "timestamp": "2026-11-25T16:19:10.407437",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.10.2"
+        }
+    }
+}
