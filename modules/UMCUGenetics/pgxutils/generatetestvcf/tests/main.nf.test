@@ -1,0 +1,37 @@
+nextflow_process {
+
+    name "Test Process PGXUTILS_GENERATETESTVCF"
+    script "../main.nf"
+    process "PGXUTILS_GENERATETESTVCF"
+
+    tag "modules"
+    tag "modules_nfcore"
+    tag "pgxutils"
+    tag "pgxutils/generatetestvcf"
+
+    test ("Test - CYP2B6") {
+        setup {
+            PgxTableData.stageTables("${launchDir}/pgx_tables")
+        }
+        when{
+            process {
+                """
+                input[0] = [ [id: 'pgx_tables'], file("${launchDir}/pgx_tables") ]
+                input[1] = 'CYP2B6'
+                """
+            }
+        }
+        then{
+            assert process.success
+            assert process.out.vcf.size() == 1
+            assert process.out.idx.size() == 1
+            assert process.out.expected_results.size() == 1
+            assert process.out.vcf[0][0] == [id: 'CYP2B6']
+            assert file(process.out.vcf[0][1]).name.endsWith('.diplotypes.vcf.gz')
+            assert file(process.out.idx[0][1]).name.endsWith('.diplotypes.vcf.gz.tbi')
+
+            assert snapshot(process.out.expected_results).match()
+
+        }
+    }
+}
